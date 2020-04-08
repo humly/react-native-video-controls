@@ -13,7 +13,7 @@ import {
     View,
     Text
 } from 'react-native';
-import _ from 'lodash';
+import { padStart } from 'lodash';
 
 export default class VideoPlayer extends Component {
 
@@ -509,8 +509,8 @@ export default class VideoPlayer extends Component {
             this.state.duration
         );
 
-        const formattedMinutes = _.padStart( Math.floor( time / 60 ).toFixed( 0 ), 2, 0 );
-        const formattedSeconds = _.padStart( Math.floor( time % 60 ).toFixed( 0 ), 2 , 0 );
+        const formattedMinutes = padStart( Math.floor( time / 60 ).toFixed( 0 ), 2, 0 );
+        const formattedSeconds = padStart( Math.floor( time % 60 ).toFixed( 0 ), 2 , 0 );
 
         return `${ symbol }${ formattedMinutes }:${ formattedSeconds }`;
     }
